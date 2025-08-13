@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Polskie Towarzystwo Psychologiczne – Egzamin na tytuł psychoterapeuty</title>
+  <meta name="description" content="Oficjalna strona egzaminu na tytuł psychoterapeuty PTP: kryteria dopuszczenia, harmonogram, dokumenty, opłaty i rejestracja online." />
+  <meta property="og:title" content="Egzamin na tytuł psychoterapeuty – PTP" />
+  <meta property="og:description" content="Kryteria, terminy, dokumenty, rejestracja. Kolorystyka niebieska, dostępność WCAG.">
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta name="theme-color" content="#0a3d91" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f5f8ff;
+      --ink:#0a1f44;
+      --muted:#4a6a9a;
+      --card:#ffffff;
+      --blue-700:#104db3;
+      --blue-600:#1666d6;
+      --blue-500:#1e78ff;
+      --blue-300:#9cc3ff;
+      --accent:#0bc5ea; /* niebiesko-cyjan */
+      --border:#d7e3ff;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(16,77,179,.12);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+    a{color:var(--blue-700);text-decoration:none}
+    a.cta{color:#fff}
+    img{max-width:100%;height:auto}
+    .container{width:min(1140px,92vw);margin:0 auto}
+
+    /* Header */
+    header{position:sticky;top:0;background:#ffffffd9;backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--border);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .logo{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue-700),var(--blue-500));color:#fff;box-shadow:0 6px 18px rgba(16,77,179,.25)}
+    .nav a.cta{padding:10px 16px;border-radius:999px;background:linear-gradient(135deg,var(--blue-700),var(--blue-500));font-weight:600;box-shadow:0 8px 24px rgba(16,77,179,.25);border:0}
+
+    /* Hero */
+    .hero{padding:56px 0 28px;background:linear-gradient(180deg,#eef4ff,transparent)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center}
+    .eyebrow{display:inline-flex;gap:10px;align-items:center;font-size:13px;color:var(--muted);background:#e8f1ff;border:1px solid var(--border);padding:6px 10px;border-radius:999px}
+    .title{font-size:clamp(28px,5.6vw,48px);line-height:1.1;margin:12px 0}
+    .lead{font-size:clamp(16px,2.2vw,20px);color:#2b4772}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .btn-primary,.btn-ghost{padding:14px 18px;border-radius:12px;font-weight:600;border:1px solid transparent}
+    .btn-primary{background:linear-gradient(135deg,var(--blue-700),var(--blue-500));color:#fff;box-shadow:0 10px 30px rgba(16,77,179,.25)}
+    .btn-ghost{background:#f0f6ff;color:var(--blue-700);border-color:var(--border)}
+    .meta{display:flex;gap:16px;align-items:center;margin-top:14px;color:#385d94;font-size:14px}
+
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+
+    /* Sections */
+    section{padding:52px 0}
+    h2.section-title{font-size:clamp(22px,4.4vw,34px);margin:0 0 12px}
+    p.section-lead{color:#365c92;margin:0 0 20px}
+
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+
+    .steps{counter-reset:step}
+    .step{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px}
+    .step:before{counter-increment:step;content:counter(step);width:28px;height:28px;border-radius:999px;display:grid;place-items:center;background:var(--blue-700);color:#fff;font-weight:700;flex:0 0 28px}
+
+    .table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    .table th,.table td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:left}
+    .table thead th{background:#eaf2ff;font-weight:600}
+    .table tr:last-child td{border-bottom:0}
+
+    .notice{border-left:4px solid var(--blue-600);background:#ecf3ff;padding:12px 14px;border-radius:8px}
+
+    .faq{display:grid;gap:12px}
+    details{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 14px}
+    details summary{cursor:pointer;font-weight:600}
+
+    footer{padding:40px 0 60px;color:#3a5b8f;font-size:14px;border-top:1px solid var(--border);background:#f7fbff}
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero-grid,.grid-2,.grid-3{grid-template-columns:1fr}
+      .hero{padding-top:36px}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Polskie Towarzystwo Psychologiczne",
+    "url":"https://twojadomena.pl",
+    "logo":"https://twojadomena.pl/logo.png",
+    "sameAs":[],
+    "department":{
+      "@type":"Organization",
+      "name":"Komisja ds. Certyfikacji Psychoterapeutów"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container nav" role="navigation" aria-label="Główna nawigacja">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">Ψ</div>
+        <a href="#top" aria-label="Strona główna">Polskie Towarzystwo Psychologiczne</a>
+      </div>
+      <nav>
+        <a href="#kryteria">Kryteria</a>&nbsp;&nbsp;&nbsp;
+        <a href="#terminy">Terminy</a>&nbsp;&nbsp;&nbsp;
+        <a href="#dokumenty">Dokumenty</a>&nbsp;&nbsp;&nbsp;
+        <a href="#rejestracja" class="cta">Zgłoś się do egzaminu</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Egzamin certyfikacyjny • PTP</span>
+        <h1 class="title">Egzamin na tytuł psychoterapeuty</h1>
+        <p class="lead">Oficjalna ścieżka uzyskania tytułu psychoterapeuty Polskiego Towarzystwa Psychologicznego. Tutaj znajdziesz kryteria dopuszczenia, harmonogram, listę dokumentów i formularz zgłoszeniowy.</p>
+        <div class="cta-row">
+          <a class="btn-primary" href="#rejestracja">Zgłoś się do egzaminu</a>
+          <a class="btn-ghost" href="#kryteria">Sprawdź wymagania</a>
+        </div>
+        <div class="meta" aria-label="Informacje pomocnicze">
+          <span>🗂️ Rejestracja online</span>
+          <span>🧭 Jasne wytyczne</span>
+          <span>♿ Dostępność WCAG</span>
+        </div>
+      </div>
+      <div>
+        <div class="card" aria-labelledby="infoboxTitle">
+          <h3 id="infoboxTitle" style="margin-top:0">Najbliższa sesja</h3>
+          <table class="table" aria-label="Najbliższa sesja egzaminacyjna">
+            <thead>
+              <tr><th>Etap</th><th>Data</th><th>Uwagi</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Nabór wniosków</td><td>1–30 października 2025</td><td>Formularz online, komplet dokumentów</td></tr>
+              <tr><td>Weryfikacja formalna</td><td>do 20 listopada 2025</td><td>Informacja e‑mail</td></tr>
+              <tr><td>Egzamin pisemny</td><td>6 grudnia 2025</td><td>Warszawa / zdalnie</td></tr>
+              <tr><td>Egzamin ustny</td><td>7–8 grudnia 2025</td><td>Komisje egzaminacyjne</td></tr>
+            </tbody>
+          </table>
+          <div class="notice" style="margin-top:12px">Terminy przykładowe – podmień po publikacji uchwały komisji.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- KRYTERIA -->
+  <section id="kryteria">
+    <div class="container">
+      <h2 class="section-title">Kryteria dopuszczenia</h2>
+      <p class="section-lead">Podstawowe wymagania przed przystąpieniem do egzaminu (streść w punktach; podlinkuj szczegółowy regulamin).</p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Wykształcenie</h3>
+          <ul>
+            <li>Ukończone studia magisterskie w dziedzinie nauk humanistycznych/medycznych (np. psychologia, medycyna).</li>
+            <li>Szkolenie podyplomowe w psychoterapii w wymiarze min. X godzin (teoria, praktyka, superwizja).</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Doświadczenie</h3>
+          <ul>
+            <li>Praktyka kliniczna min. Y godzin z dokumentacją przypadków.</li>
+            <li>Superwizja u certyfikowanych superwizorów – min. Z godzin.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Dokumentacja</h3>
+          <ul>
+            <li>Wniosek, CV, dyplomy, zaświadczenia o szkoleniach i superwizji.</li>
+            <li>Opisy przypadków (case studies) zgodnie ze wzorem komisji.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Standardy etyczne</h3>
+          <ul>
+            <li>Oświadczenie o przestrzeganiu Kodeksu Etycznego.</li>
+            <li>Brak toczących się postępowań dyscyplinarnych.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOKUMENTY -->
+  <section id="dokumenty">
+    <div class="container">
+      <h2 class="section-title">Dokumenty do pobrania</h2>
+      <div class="grid-3">
+        <a class="card" href="#" download rel="nofollow" aria-label="Regulamin egzaminu (PDF)">
+          <strong>Regulamin egzaminu (PDF)</strong>
+          <p style="color:#3b5f94">Aktualne zasady, strukturę i opis kryteriów.</p>
+        </a>
+        <a class="card" href="#" download rel="nofollow" aria-label="Wzór opisu przypadku (DOCX)">
+          <strong>Wzór opisu przypadku (DOCX)</strong>
+          <p style="color:#3b5f94">Formatowanie, zakres i metoda oceny.</p>
+        </a>
+        <a class="card" href="#" download rel="nofollow" aria-label="Lista kontrolna dokumentów (PDF)">
+          <strong>Lista kontrolna dokumentów (PDF)</strong>
+          <p style="color:#3b5f94">Szybka weryfikacja kompletności wniosku.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPŁATY I PRZEBIEG -->
+  <section id="terminy">
+    <div class="container">
+      <h2 class="section-title">Opłaty i przebieg egzaminu</h2>
+      <p class="section-lead">Proces składa się z trzech części: weryfikacja formalna, egzamin pisemny, egzamin ustny.</p>
+      <div class="grid-2">
+        <div>
+          <div class="steps" style="display:grid;gap:12px">
+            <div class="step"><div><strong>1. Weryfikacja formalna</strong><br>Sprawdzamy kompletność i zgodność dokumentów.</div></div>
+            <div class="step"><div><strong>2. Egzamin pisemny</strong><br>Test wielokrotnego wyboru + pytania otwarte na podstawie literatury podstawowej.</div></div>
+            <div class="step"><div><strong>3. Egzamin ustny</strong><br>Omówienie przypadków, standardy etyczne, decyzje kliniczne.</div></div>
+          </div>
+        </div>
+        <div>
+          <table class="table" aria-label="Opłaty egzaminacyjne">
+            <thead>
+              <tr><th>Pozycja</th><th>Kwota (PLN)</th><th>Uwagi</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Opłata za wniosek</td><td>300</td><td>Bezzwrotna</td></tr>
+              <tr><td>Egzamin pisemny</td><td>600</td><td>Przystąpienie do części I</td></tr>
+              <tr><td>Egzamin ustny</td><td>700</td><td>Po zaliczeniu części pisemnej</td></tr>
+            </tbody>
+          </table>
+          <p class="notice" role="note">Kwoty przykładowe – podmień zgodnie z aktualną uchwałą komisji.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REJESTRACJA -->
+  <section id="rejestracja">
+    <div class="container">
+      <h2 class="section-title">Rejestracja online</h2>
+      <p class="section-lead">Zgłoszenie zajmie ~10 minut. Po wysłaniu formularza otrzymasz potwierdzenie e‑mail z listą braków (jeśli wystąpią).</p>
+      <div class="card">
+        <!-- W produkcji wstaw realny endpoint lub narzędzie typu Typeform / Formularz PTP -->
+        <form onsubmit="handleSubmit(event)" aria-label="Formularz zgłoszeniowy">
+          <div class="grid-2">
+            <label>Imię i nazwisko<br><input name="name" required style="width:100%;padding:12px;border:1px solid var(--border);border-radius:10px"></label>
+            <label>Adres e‑mail<br><input type="email" name="email" required style="width:100%;padding:12px;border:1px solid var(--border);border-radius:10px"></label>
+            <label>Wykształcenie<br><input name="edu" required style="width:100%;padding:12px;border:1px solid var(--border);border-radius:10px"></label>
+            <label>Szkolenie w psychoterapii (godziny)<br><input type="number" name="hours" min="0" required style="width:100%;padding:12px;border:1px solid var(--border);border-radius:10px"></label>
+            <label>Superwizja (godziny)<br><input type="number" name="sup" min="0" required style="width:100%;padding:12px;border:1px solid var(--border);border-radius:10px"></label>
+            <label>Załącz CV (PDF)<br><input type="file" name="cv" accept="application/pdf" required style="width:100%;padding:10px;border:1px solid var(--border);border-radius:10px;background:#f8fbff"></label>
+          </div>
+          <label>Uwagi dodatkowe<br><textarea name="msg" rows="4" style="width:100%;padding:12px;border:1px solid var(--border);border-radius:10px"></textarea></label>
+          <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+            <input id="rodo" type="checkbox" required aria-required="true" />
+            <label for="rodo">Wyrażam zgodę na przetwarzanie danych w celu przeprowadzenia egzaminu (RODO).</label>
+          </div>
+          <div class="cta-row" style="margin-top:16px">
+            <button class="btn-primary" type="submit">Wyślij zgłoszenie</button>
+            <a class="btn-ghost" href="#faq">Najczęstsze pytania</a>
+          </div>
+          <p id="formStatus" class="notice" style="display:none;margin-top:12px" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">FAQ — pytania i odpowiedzi</h2>
+      <div class="faq">
+        <details>
+          <summary>Czy mogę zdawać zdalnie?</summary>
+          <p>Egzamin pisemny może odbywać się stacjonarnie lub zdalnie. Forma zostanie ogłoszona wraz z harmonogramem sesji.</p>
+        </details>
+        <details>
+          <summary>Jakie są podstawy programowe / literatura?</summary>
+          <p>Lista lektur i standardów szkolenia jest publikowana w Regulaminie egzaminu. Link znajdziesz w sekcji „Dokumenty”.</p>
+        </details>
+        <details>
+          <summary>Co w przypadku niepowodzenia?</summary>
+          <p>Możliwość powtórzenia części egzaminu w kolejnej sesji zgodnie z zasadami określonymi w Regulaminie.</p>
+        </details>
+        <details>
+          <summary>Wsparcie dla osób z niepełnosprawnościami</summary>
+          <p>Zapewniamy racjonalne dostosowania (np. przedłużony czas, asysta). Skontaktuj się z nami po złożeniu wniosku.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <div class="container">
+      <h2 class="section-title">Kontakt</h2>
+      <div class="grid-2">
+        <div class="card">
+          <p><strong>Komisja ds. Certyfikacji Psychoterapeutów PTP</strong></p>
+          <p>E‑mail: <a href="mailto:certyfikacja@ptp.pl">certyfikacja@ptp.pl</a><br>Telefon: +48 000 000 000 (pon.–pt. 10:00–14:00)</p>
+          <p>Adres korespondencyjny: ul. Przykładowa 1, 00‑000 Warszawa</p>
+        </div>
+        <div class="card">
+          <p><strong>Godziny przyjęć interesantów</strong></p>
+          <table class="table" aria-label="Godziny przyjęć">
+            <thead><tr><th>Dzień</th><th>Godziny</th></tr></thead>
+            <tbody>
+              <tr><td>Poniedziałek</td><td>10:00–14:00</td></tr>
+              <tr><td>Środa</td><td>10:00–14:00</td></tr>
+              <tr><td>Piątek</td><td>10:00–12:00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="grid-3">
+        <div>
+          <strong>Polskie Towarzystwo Psychologiczne</strong>
+          <p>© 2025 PTP. Wszelkie prawa zastrzeżone.</p>
+        </div>
+        <div>
+          <p><a href="#" class="">Polityka prywatności (RODO)</a></p>
+          <p><a href="#" class="">Regulamin egzaminu</a></p>
+          <p><a href="#" class="">Deklaracja dostępności</a></p>
+        </div>
+        <div>
+          <p>Masz pytania? Napisz: <a href="mailto:certyfikacja@ptp.pl">certyfikacja@ptp.pl</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Płynne przewijanie
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id.length>1){e.preventDefault();document.querySelector(id).scrollIntoView({behavior:'smooth'});}});
+    });
+
+    // Demo – obsługa formularza (bez backendu)
+    function handleSubmit(e){
+      e.preventDefault();
+      const status=document.getElementById('formStatus');
+      status.style.display='block';
+      status.textContent='Dziękujemy. Twoje zgłoszenie zostało zapisane (tryb demonstracyjny). Skontaktujemy się e‑mailowo.';
+      e.target.reset();
+      document.getElementById('rodo').checked=false;
+    }
+  </script>
+</body>
+</html>
